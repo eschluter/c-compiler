@@ -1,0 +1,11 @@
+if cpp $1 | bin/cstr-compiler; then
+	gcc -O0 -c -m32 out.s
+	gcc -O2 -Wall -c -m32 lib/lib.c
+	gcc -O0 -m32 out.o lib.o -o bin/test
+	rm lib.o
+	rm out.o
+	bin/test
+else
+	echo "scc: compilation terminated. Aborting..."
+	exit 1
+fi

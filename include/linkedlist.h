@@ -1,3 +1,6 @@
+/* Erik Schluter
+ * 3/21/2016
+ */
 #pragma once
 #include <stdlib.h>
 

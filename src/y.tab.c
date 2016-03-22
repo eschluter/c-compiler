@@ -17,7 +17,7 @@
 
 #define YYPURE 0
 
-#line 2 "src/cstr-parser.y"
+#line 5 "src/cstr-parser.y"
 #include "compilerAPI.h"
 #include <stdlib.h>
 #include <stdio.h>
@@ -36,7 +36,7 @@ typedef struct decl_t {
 	KIND idtype;
 	TYPE dectype;
 } decl_t;
-#line 22 "src/cstr-parser.y"
+#line 25 "src/cstr-parser.y"
 #ifdef YYSTYPE
 #undef  YYSTYPE_IS_DECLARED
 #define YYSTYPE_IS_DECLARED 1
@@ -460,7 +460,7 @@ typedef struct {
 } YYSTACKDATA;
 /* variables for the parser stack */
 static YYSTACKDATA yystack;
-#line 478 "src/cstr-parser.y"
+#line 481 "src/cstr-parser.y"
 
 #include "lex.yy.c"
 
@@ -700,105 +700,105 @@ yyreduce:
     switch (yyn)
     {
 case 3:
-#line 80 "src/cstr-parser.y"
+#line 83 "src/cstr-parser.y"
 	{ process_declaration (yystack.l_mark[0].dclt.dectype); }
 break;
 case 4:
-#line 82 "src/cstr-parser.y"
+#line 85 "src/cstr-parser.y"
 	{ process_extern(yystack.l_mark[0].dclt.dectype); }
 break;
 case 5:
-#line 84 "src/cstr-parser.y"
+#line 87 "src/cstr-parser.y"
 	{ process_declaration (yystack.l_mark[0].dclt.dectype); }
 break;
 case 6:
-#line 89 "src/cstr-parser.y"
+#line 92 "src/cstr-parser.y"
 	{ 	type_check_return(yystack.l_mark[-2].idptr, yystack.l_mark[-3].tval);
 		push_back_dec(yystack.l_mark[-2].idptr, FUNC); 
 		yyval.dclt.dectype = yystack.l_mark[-3].tval; }
 break;
 case 7:
-#line 95 "src/cstr-parser.y"
+#line 98 "src/cstr-parser.y"
 	{ generate_function_header (); }
 break;
 case 8:
-#line 100 "src/cstr-parser.y"
+#line 103 "src/cstr-parser.y"
 	{ yyval.dclt.dectype = yystack.l_mark[-2].tval; }
 break;
 case 9:
-#line 104 "src/cstr-parser.y"
+#line 107 "src/cstr-parser.y"
 	{yyval.tval=INT;}
 break;
 case 10:
-#line 105 "src/cstr-parser.y"
+#line 108 "src/cstr-parser.y"
 	{yyval.tval=STRING;}
 break;
 case 11:
-#line 110 "src/cstr-parser.y"
+#line 113 "src/cstr-parser.y"
 	{ push_back_dec (yystack.l_mark[0].dclt.idptr, yystack.l_mark[0].dclt.idtype); }
 break;
 case 12:
-#line 112 "src/cstr-parser.y"
+#line 115 "src/cstr-parser.y"
 	{ push_back_dec (yystack.l_mark[0].dclt.idptr, yystack.l_mark[0].dclt.idtype); }
 break;
 case 13:
-#line 117 "src/cstr-parser.y"
+#line 120 "src/cstr-parser.y"
 	{ process_declaration (yystack.l_mark[0].dclt.dectype); }
 break;
 case 14:
-#line 119 "src/cstr-parser.y"
+#line 122 "src/cstr-parser.y"
 	{ process_declaration (yystack.l_mark[0].dclt.dectype); }
 break;
 case 15:
-#line 121 "src/cstr-parser.y"
+#line 124 "src/cstr-parser.y"
 	{ process_matrix_declaration (yystack.l_mark[-4].idptr, yystack.l_mark[-2].itype, 0); }
 break;
 case 16:
-#line 123 "src/cstr-parser.y"
+#line 126 "src/cstr-parser.y"
 	{ process_matrix_declaration (yystack.l_mark[-7].idptr, yystack.l_mark[-5].itype, yystack.l_mark[-2].itype); }
 break;
 case 17:
-#line 128 "src/cstr-parser.y"
+#line 131 "src/cstr-parser.y"
 	{ yyval.dclt.idptr = yystack.l_mark[0].idptr; yyval.dclt.idtype = VAR; }
 break;
 case 18:
-#line 130 "src/cstr-parser.y"
+#line 133 "src/cstr-parser.y"
 	{ yyval.dclt.idptr = yystack.l_mark[0].idptr; yyval.dclt.idtype = FUNC; }
 break;
 case 19:
-#line 135 "src/cstr-parser.y"
+#line 138 "src/cstr-parser.y"
 	{ yyval.idptr=yystack.l_mark[-2].idptr; set_function_id (yystack.l_mark[-2].idptr); }
 break;
 case 20:
-#line 137 "src/cstr-parser.y"
+#line 140 "src/cstr-parser.y"
 	{ yyval.idptr=yystack.l_mark[-3].idptr; set_function_id (yystack.l_mark[-3].idptr); }
 break;
 case 23:
-#line 147 "src/cstr-parser.y"
+#line 150 "src/cstr-parser.y"
 	{ process_p_declaration (yystack.l_mark[-1].tval, yystack.l_mark[0].idptr); }
 break;
 case 25:
-#line 152 "src/cstr-parser.y"
+#line 155 "src/cstr-parser.y"
 	{ generate_else(); }
 break;
 case 26:
-#line 153 "src/cstr-parser.y"
-	{ generate_else(); }
-break;
-case 27:
-#line 154 "src/cstr-parser.y"
-	{ }
-break;
-case 28:
-#line 155 "src/cstr-parser.y"
-	{ }
-break;
-case 29:
 #line 156 "src/cstr-parser.y"
 	{ generate_else(); }
 break;
+case 27:
+#line 157 "src/cstr-parser.y"
+	{ }
+break;
+case 28:
+#line 158 "src/cstr-parser.y"
+	{ }
+break;
+case 29:
+#line 159 "src/cstr-parser.y"
+	{ generate_else(); }
+break;
 case 32:
-#line 166 "src/cstr-parser.y"
+#line 169 "src/cstr-parser.y"
 	{
 	/* TC*/
 		type_check_assignment ( get_id_type(yystack.l_mark[-2].idptr), yystack.l_mark[0].exp.typ );
@@ -808,7 +808,7 @@ case 32:
 	}
 break;
 case 33:
-#line 174 "src/cstr-parser.y"
+#line 177 "src/cstr-parser.y"
 	{
 	/* TC*/
 		type_check_array_index (yystack.l_mark[-3].exp.typ);
@@ -819,7 +819,7 @@ case 33:
 	}
 break;
 case 34:
-#line 183 "src/cstr-parser.y"
+#line 186 "src/cstr-parser.y"
 	{
 	/* TC*/
 		type_check_matrix_index (yystack.l_mark[-6].exp.typ, yystack.l_mark[-3].exp.typ);
@@ -830,7 +830,7 @@ case 34:
 	}
 break;
 case 39:
-#line 203 "src/cstr-parser.y"
+#line 206 "src/cstr-parser.y"
 	{ 
 	/* CG*/
 		generate_loop_beg_block ();
@@ -839,53 +839,53 @@ case 39:
 	}
 break;
 case 40:
-#line 213 "src/cstr-parser.y"
+#line 216 "src/cstr-parser.y"
 	{ exit_scope (); }
 break;
 case 43:
-#line 223 "src/cstr-parser.y"
+#line 226 "src/cstr-parser.y"
 	{
 	/*CG*/
 		generate_ifend ();
 	}
 break;
 case 44:
-#line 228 "src/cstr-parser.y"
+#line 231 "src/cstr-parser.y"
 	{ 
 	/* CG*/
 		generate_ifend ();
 	}
 break;
 case 45:
-#line 236 "src/cstr-parser.y"
+#line 239 "src/cstr-parser.y"
 	{
 	/* CG*/
 		generate_if (yystack.l_mark[-1].exp.compar);
 	}
 break;
 case 46:
-#line 244 "src/cstr-parser.y"
+#line 247 "src/cstr-parser.y"
 	{
 	/* CG*/
 		terminate_while ();
 	}
 break;
 case 47:
-#line 249 "src/cstr-parser.y"
+#line 252 "src/cstr-parser.y"
 	{ 
 	/* CG*/
 		terminate_do_while (yystack.l_mark[-1].exp.compar);
 	}
 break;
 case 48:
-#line 254 "src/cstr-parser.y"
+#line 257 "src/cstr-parser.y"
 	{ 
 	/* CG*/
 		terminate_for ();
 	}
 break;
 case 49:
-#line 262 "src/cstr-parser.y"
+#line 265 "src/cstr-parser.y"
 	{
 	/* TC*/
 		push_back_returntype (yystack.l_mark[-1].exp.typ);
@@ -894,7 +894,7 @@ case 49:
 	}
 break;
 case 50:
-#line 272 "src/cstr-parser.y"
+#line 275 "src/cstr-parser.y"
 	{
 		OP opoverride = COMPARISON;
 		yyval.exp = yystack.l_mark[-1].exp;
@@ -916,35 +916,35 @@ case 50:
 	}
 break;
 case 51:
-#line 294 "src/cstr-parser.y"
+#line 297 "src/cstr-parser.y"
 	{yyval.exp.compar = EQUAL;}
 break;
 case 52:
-#line 295 "src/cstr-parser.y"
+#line 298 "src/cstr-parser.y"
 	{yyval.exp.compar = NEQUAL;}
 break;
 case 53:
-#line 296 "src/cstr-parser.y"
+#line 299 "src/cstr-parser.y"
 	{yyval.exp.compar = INFERIOR;}
 break;
 case 54:
-#line 297 "src/cstr-parser.y"
+#line 300 "src/cstr-parser.y"
 	{yyval.exp.compar = SUPERIOR;}
 break;
 case 55:
-#line 298 "src/cstr-parser.y"
+#line 301 "src/cstr-parser.y"
 	{yyval.exp.compar = INFERIOREQ;}
 break;
 case 56:
-#line 299 "src/cstr-parser.y"
+#line 302 "src/cstr-parser.y"
 	{yyval.exp.compar = SUPERIOREQ;}
 break;
 case 57:
-#line 304 "src/cstr-parser.y"
+#line 307 "src/cstr-parser.y"
 	{ yyval.exp = yystack.l_mark[0].exp; }
 break;
 case 58:
-#line 306 "src/cstr-parser.y"
+#line 309 "src/cstr-parser.y"
 	{ 	
 	/* TC*/
 		yyval.exp.typ	= type_check_bitwise (yystack.l_mark[-2].exp.typ, yystack.l_mark[0].exp.typ); 
@@ -954,7 +954,7 @@ case 58:
 	}
 break;
 case 59:
-#line 314 "src/cstr-parser.y"
+#line 317 "src/cstr-parser.y"
 	{ 
 	/* TC*/
 		yyval.exp.typ	= type_check_bitwise (yystack.l_mark[-2].exp.typ, yystack.l_mark[0].exp.typ); 
@@ -964,11 +964,11 @@ case 59:
 	}
 break;
 case 60:
-#line 325 "src/cstr-parser.y"
+#line 328 "src/cstr-parser.y"
 	{ yyval.exp = yystack.l_mark[0].exp; }
 break;
 case 61:
-#line 327 "src/cstr-parser.y"
+#line 330 "src/cstr-parser.y"
 	{ 	
 	/* TC*/
 		yyval.exp.typ	= type_check_addition (yystack.l_mark[-2].exp.typ, yystack.l_mark[0].exp.typ); 
@@ -985,7 +985,7 @@ case 61:
 	}
 break;
 case 62:
-#line 342 "src/cstr-parser.y"
+#line 345 "src/cstr-parser.y"
 	{ 
 	/* TC*/
 		yyval.exp.typ	= type_check_numerical (yystack.l_mark[-2].exp.typ, yystack.l_mark[0].exp.typ); 
@@ -995,11 +995,11 @@ case 62:
 	}
 break;
 case 63:
-#line 353 "src/cstr-parser.y"
+#line 356 "src/cstr-parser.y"
 	{ yyval.exp = yystack.l_mark[0].exp; }
 break;
 case 64:
-#line 355 "src/cstr-parser.y"
+#line 358 "src/cstr-parser.y"
 	{ 	
 	/* TC*/
 		yyval.exp.typ	= type_check_numerical (yystack.l_mark[-2].exp.typ, yystack.l_mark[0].exp.typ); 
@@ -1009,7 +1009,7 @@ case 64:
 	}
 break;
 case 65:
-#line 363 "src/cstr-parser.y"
+#line 366 "src/cstr-parser.y"
 	{ 	
 	/* TC*/
 		yyval.exp.typ	= type_check_numerical (yystack.l_mark[-2].exp.typ, yystack.l_mark[0].exp.typ); 
@@ -1019,7 +1019,7 @@ case 65:
 	}
 break;
 case 66:
-#line 371 "src/cstr-parser.y"
+#line 374 "src/cstr-parser.y"
 	{ 
 	/* TC*/
 		yyval.exp.typ 	= type_check_modulo (yystack.l_mark[-2].exp.typ, yystack.l_mark[0].exp.typ);
@@ -1029,11 +1029,11 @@ case 66:
 	}
 break;
 case 67:
-#line 382 "src/cstr-parser.y"
+#line 385 "src/cstr-parser.y"
 	{ yyval.exp = yystack.l_mark[0].exp; }
 break;
 case 68:
-#line 384 "src/cstr-parser.y"
+#line 387 "src/cstr-parser.y"
 	{ 
 		yystack.l_mark[0].exp.mtyp	= RESULT;
 		yyval.exp 	= yystack.l_mark[0].exp;
@@ -1042,11 +1042,11 @@ case 68:
 	}
 break;
 case 69:
-#line 394 "src/cstr-parser.y"
+#line 397 "src/cstr-parser.y"
 	{ yyval.exp = yystack.l_mark[0].exp; }
 break;
 case 70:
-#line 396 "src/cstr-parser.y"
+#line 399 "src/cstr-parser.y"
 	{ 
 	/* TC*/
 		yyval.exp.typ = type_check_array_index (yystack.l_mark[-1].exp.typ);
@@ -1057,7 +1057,7 @@ case 70:
 	}
 break;
 case 71:
-#line 405 "src/cstr-parser.y"
+#line 408 "src/cstr-parser.y"
 	{
 	/* TC*/
 		yyval.exp.typ = type_check_matrix_index (yystack.l_mark[-4].exp.typ, yystack.l_mark[-1].exp.typ);
@@ -1068,11 +1068,11 @@ case 71:
 	}
 break;
 case 72:
-#line 417 "src/cstr-parser.y"
+#line 420 "src/cstr-parser.y"
 	{ yyval.exp = yystack.l_mark[0].exp; }
 break;
 case 73:
-#line 419 "src/cstr-parser.y"
+#line 422 "src/cstr-parser.y"
 	{ 	
 		yyval.exp.typ 	= get_id_type (yystack.l_mark[-3].idptr);
 		type_check_fparams (yystack.l_mark[-3].idptr);
@@ -1083,7 +1083,7 @@ case 73:
 	}
 break;
 case 74:
-#line 428 "src/cstr-parser.y"
+#line 431 "src/cstr-parser.y"
 	{ 	
 		yyval.exp.typ 	= get_id_type (yystack.l_mark[-2].idptr);
 		call_function (yystack.l_mark[-2].idptr);
@@ -1093,15 +1093,15 @@ case 74:
 	}
 break;
 case 75:
-#line 439 "src/cstr-parser.y"
+#line 442 "src/cstr-parser.y"
 	{ push_fparam (yystack.l_mark[0].exp.idptr, yystack.l_mark[0].exp.typ, yystack.l_mark[0].exp.mtyp, yystack.l_mark[0].exp.ival); }
 break;
 case 76:
-#line 441 "src/cstr-parser.y"
+#line 444 "src/cstr-parser.y"
 	{ push_fparam (yystack.l_mark[0].exp.idptr, yystack.l_mark[0].exp.typ, yystack.l_mark[0].exp.mtyp, yystack.l_mark[0].exp.ival); }
 break;
 case 77:
-#line 446 "src/cstr-parser.y"
+#line 449 "src/cstr-parser.y"
 	{ 
 		yyval.exp.typ 	= get_id_type (yystack.l_mark[0].idptr);
 		yyval.exp.idptr 	= yystack.l_mark[0].idptr; /*free($1);*/ 
@@ -1112,7 +1112,7 @@ case 77:
 	}
 break;
 case 78:
-#line 455 "src/cstr-parser.y"
+#line 458 "src/cstr-parser.y"
 	{ 
 		yyval.exp.typ 	= INT;
 		yyval.exp.ival 	= yystack.l_mark[0].itype;
@@ -1123,7 +1123,7 @@ case 78:
 	}
 break;
 case 79:
-#line 464 "src/cstr-parser.y"
+#line 467 "src/cstr-parser.y"
 	{ 
 		yyval.exp.typ 	= STRING;
 		yyval.exp.sval 	= yystack.l_mark[0].strval;
@@ -1135,7 +1135,7 @@ case 79:
 	}
 break;
 case 80:
-#line 474 "src/cstr-parser.y"
+#line 477 "src/cstr-parser.y"
 	{ yyval.exp = yystack.l_mark[-1].exp; }
 break;
 #line 1142 "y.tab.c"

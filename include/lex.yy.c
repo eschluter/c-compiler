@@ -505,12 +505,15 @@ int yy_flex_debug = 0;
 char yytext[YYLMAX];
 char *yytext_ptr;
 #line 1 "src/cstr-lexer.l"
-#line 2 "src/cstr-lexer.l"
+/* Erik Schluter
+ * 3/21/2016
+ */
+#line 5 "src/cstr-lexer.l"
 #include <stdlib.h>
 #include <string.h>
 #include "compilerAPI.h"
 #include "y.tab.h"
-#line 514 "lex.yy.c"
+#line 517 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -719,10 +722,10 @@ YY_DECL
 		}
 
 	{
-#line 50 "src/cstr-lexer.l"
+#line 53 "src/cstr-lexer.l"
 
 
-#line 726 "lex.yy.c"
+#line 729 "lex.yy.c"
 
 	while ( 1 )		/* loops until end-of-file is reached */
 		{
@@ -781,63 +784,63 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 52 "src/cstr-lexer.l"
+#line 55 "src/cstr-lexer.l"
 { return IF; }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 53 "src/cstr-lexer.l"
+#line 56 "src/cstr-lexer.l"
 { return ELSE; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 54 "src/cstr-lexer.l"
+#line 57 "src/cstr-lexer.l"
 { return WHILE; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 55 "src/cstr-lexer.l"
+#line 58 "src/cstr-lexer.l"
 { return DO; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 56 "src/cstr-lexer.l"
+#line 59 "src/cstr-lexer.l"
 { return FOR; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 57 "src/cstr-lexer.l"
+#line 60 "src/cstr-lexer.l"
 { return RETURN; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 58 "src/cstr-lexer.l"
+#line 61 "src/cstr-lexer.l"
 { return INTT; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 59 "src/cstr-lexer.l"
+#line 62 "src/cstr-lexer.l"
 { return STRINGT; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 60 "src/cstr-lexer.l"
+#line 63 "src/cstr-lexer.l"
 { return EXTERNT; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 61 "src/cstr-lexer.l"
+#line 64 "src/cstr-lexer.l"
 { yylval.idptr = strcpy( (char*)malloc(strlen(yytext)+1), yytext ); return IDENT; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 62 "src/cstr-lexer.l"
+#line 65 "src/cstr-lexer.l"
 { yylval.itype = atoi(yytext); return CONST_INT; }
 	YY_BREAK
 case 12:
 /* rule 12 can match eol */
 YY_RULE_SETUP
-#line 63 "src/cstr-lexer.l"
+#line 66 "src/cstr-lexer.l"
 { 	
 			// remove the parenthesis
 			char * tempstr; unsigned int len;//char * tok; unsigned int i; unsigned int endindex; int sub = 3;
@@ -850,122 +853,122 @@ YY_RULE_SETUP
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 72 "src/cstr-lexer.l"
+#line 75 "src/cstr-lexer.l"
 { return ASSIGNMENT; }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 73 "src/cstr-lexer.l"
+#line 76 "src/cstr-lexer.l"
 { return PLUS; }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 74 "src/cstr-lexer.l"
+#line 77 "src/cstr-lexer.l"
 { return MINUS; }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 75 "src/cstr-lexer.l"
+#line 78 "src/cstr-lexer.l"
 { return SHIFTLEFT; }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 76 "src/cstr-lexer.l"
+#line 79 "src/cstr-lexer.l"
 { return SHIFTRIGHT; }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 77 "src/cstr-lexer.l"
+#line 80 "src/cstr-lexer.l"
 { return EGAL; }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 78 "src/cstr-lexer.l"
+#line 81 "src/cstr-lexer.l"
 { return DIFF; }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 79 "src/cstr-lexer.l"
+#line 82 "src/cstr-lexer.l"
 { return INF; }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 80 "src/cstr-lexer.l"
+#line 83 "src/cstr-lexer.l"
 { return SUP; }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 81 "src/cstr-lexer.l"
+#line 84 "src/cstr-lexer.l"
 { return INFEQUAL; }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 82 "src/cstr-lexer.l"
+#line 85 "src/cstr-lexer.l"
 { return SUPEQUAL; }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 83 "src/cstr-lexer.l"
+#line 86 "src/cstr-lexer.l"
 { return MULTI; }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 84 "src/cstr-lexer.l"
+#line 87 "src/cstr-lexer.l"
 { return DIV; }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 85 "src/cstr-lexer.l"
+#line 88 "src/cstr-lexer.l"
 { return MODULO; }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 86 "src/cstr-lexer.l"
+#line 89 "src/cstr-lexer.l"
 { return ';'; }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 87 "src/cstr-lexer.l"
+#line 90 "src/cstr-lexer.l"
 { return ','; }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 88 "src/cstr-lexer.l"
+#line 91 "src/cstr-lexer.l"
 { return '('; }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 89 "src/cstr-lexer.l"
+#line 92 "src/cstr-lexer.l"
 { return ')'; }
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 90 "src/cstr-lexer.l"
+#line 93 "src/cstr-lexer.l"
 { return '{'; }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 91 "src/cstr-lexer.l"
+#line 94 "src/cstr-lexer.l"
 { return '}'; }
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 92 "src/cstr-lexer.l"
+#line 95 "src/cstr-lexer.l"
 { return '['; }
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 93 "src/cstr-lexer.l"
+#line 96 "src/cstr-lexer.l"
 { return ']'; }
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 95 "src/cstr-lexer.l"
+#line 98 "src/cstr-lexer.l"
 { while ( input() != '\n' ); }
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 96 "src/cstr-lexer.l"
+#line 99 "src/cstr-lexer.l"
 {
 		  while ( input() != '\n' );
 		  reset_line_counter();
@@ -973,7 +976,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 101 "src/cstr-lexer.l"
+#line 104 "src/cstr-lexer.l"
 {
 			char in, prev;
 			for (;;) {
@@ -989,18 +992,18 @@ YY_RULE_SETUP
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 114 "src/cstr-lexer.l"
+#line 117 "src/cstr-lexer.l"
 {}
 	YY_BREAK
 case 39:
 /* rule 39 can match eol */
 YY_RULE_SETUP
-#line 115 "src/cstr-lexer.l"
+#line 118 "src/cstr-lexer.l"
 { increment_line_counter(); }
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 117 "src/cstr-lexer.l"
+#line 120 "src/cstr-lexer.l"
 {
 		  printf("%s:\t Lex ERROR (line %d): invalid token\n", yytext, get_line_number() );
 		  goto_exit();
@@ -1008,10 +1011,10 @@ YY_RULE_SETUP
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 122 "src/cstr-lexer.l"
+#line 125 "src/cstr-lexer.l"
 ECHO;
 	YY_BREAK
-#line 1015 "lex.yy.c"
+#line 1018 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -2006,7 +2009,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 122 "src/cstr-lexer.l"
+#line 125 "src/cstr-lexer.l"
 
 
 

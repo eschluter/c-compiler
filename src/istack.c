@@ -1,3 +1,6 @@
+/* Erik Schluter
+ * 3/21/2016
+ */
 #include "istack.h"
 
 void istack_init (istack * st) {

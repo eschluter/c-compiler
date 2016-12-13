@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if cpp $1 | bin/cstr-compiler; then
 	gcc -O0 -c -m32 out.s
 	gcc -O2 -Wall -c -m32 lib/lib.c
